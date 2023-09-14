@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 polars = { version = "0.32.1", features = ["lazy"]}
 jni = { version = "0.21.1" }
+tch = { version = "0.13.0" }
 
 [lib]
 crate_type = ["cdylib"]
