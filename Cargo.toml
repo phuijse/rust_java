@@ -1,5 +1,5 @@
 [package]
-name = "rust-java"
+name = "rust_java"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,5 +11,4 @@ jni = { version = "0.21.1" }
 tch = { version = "0.13.0" }
 
 [lib]
-crate_type = ["cdylib"]
-path = "src/main.rs"
+crate_type = ["lib", "cdylib"]
