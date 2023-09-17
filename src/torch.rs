@@ -1,4 +1,4 @@
-use tch::{Tensor, CModule, kind};
+use tch::{kind, CModule, Tensor};
 
 pub fn inference() -> Tensor {
     let input: Tensor = Tensor::zeros(&[2], kind::FLOAT_CPU);
