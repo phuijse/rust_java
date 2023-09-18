@@ -1,7 +1,7 @@
 class MyFirstRustClass {
     // This declares that the static `hello` method will be provided
     // a native library.
-    private static native void example();
+    private static native void exposed_function(String argument);
 
     static {
         // This actually loads the shared object that we'll be creating.
@@ -12,7 +12,9 @@ class MyFirstRustClass {
 
     // The rest is just regular ol' Java!
     public static void main(String[] args) {
-        System.out.println("Hello World");
-        MyFirstRustClass.example();
+        if (args.length != 1){
+            throw new IllegalArgumentException("A file path is needed");
+        }
+        MyFirstRustClass.exposed_function(args[0]);
     }
 }
