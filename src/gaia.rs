@@ -13,9 +13,9 @@ fn fold(time: f64, period: f64) -> f64 {
     (time % period) / period
 }
 
-fn periodogram(sorted_magnitudes: [f32; 3]) -> Vec<f64> {
-    for mag in sorted_magnitudes {
-        println!("{mag}");
-    }
-    10.0
-}
+//fn periodogram(sorted_magnitudes: [f32; 3]) -> Vec<f64> {
+//    for mag in sorted_magnitudes {
+//        println!("{mag}");
+//    }
+//    10.0
+//}
