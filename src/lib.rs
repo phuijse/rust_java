@@ -2,7 +2,6 @@ use jni::objects::{JClass, JString};
 use jni::JNIEnv;
 mod gaia;
 mod torch;
-use polars::{lazy::dsl::any_horizontal, prelude::*};
 
 #[no_mangle]
 pub extern "system" fn Java_MyFirstRustClass_exposed_1function<'local>(
@@ -15,9 +14,7 @@ pub extern "system" fn Java_MyFirstRustClass_exposed_1function<'local>(
 }
 
 pub fn exposed_to_java(file_path: String) {
-    let lf = gaia::read_lightcurve(&file_path).unwrap();
-    let folded_magnitude = lf.lazy().select([col("mag").sort_by([col("time") % lit(1.0)], [false])]).collect();
-    println!("{:?}", folded_magnitude);
-    
+    let lc: gaia::LightCurve = gaia::read_lightcurve(&file_path);
+    gaia::periodogram(lc);
     //println!("{:?}", torch::inference().print());
 }
