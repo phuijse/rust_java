@@ -1,10 +1,10 @@
-# Interfaces between Java Rust and Torchscript
+# Experimenting with interfaces between Java, Rust and Torchscript
 
 Rust code can be called from java through the Java Native Interface (JNI) by exploiting the [jni crate](https://crates.io/crates/jni). 
 
 The first half of the example shows how to do some compute in Rust and exposes it in Java through a class.
 
-Then there is [torchscript](https://pytorch.org/docs/stable/jit.html) which can serialize a Pytorch model (trained in regular Python). This model can be then called using the TorchScript C++ API. C/C++ code can be called from Rust and indeed there is already a [crate](https://github.com/LaurentMazare/tch-rs) with Rust bindings for the Torchscript API. 
+Then there is [torchscript](https://pytorch.org/docs/stable/jit.html) which can serialize a Pytorch model (trained in regular Python). This model can be then called using the TorchScript C++ API. [C/C++ code can be called from Rust (and viceversa)](https://docs.rust-embedded.org/book/interoperability/index.html) and indeed there is already a [crate](https://github.com/LaurentMazare/tch-rs) with Rust bindings for the Torchscript API. 
 
 The script `model.py` creates a simple PyTorch model and serialize it. To run it I suggest:
 
